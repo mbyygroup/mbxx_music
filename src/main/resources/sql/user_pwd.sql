@@ -1,0 +1,16 @@
+CREATE TABLE `sys_user` (
+`USER_ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '表ID，主键，供其他表做外键',
+`TO_ID` bigint(20) NOT NULL  COMMENT'所属组织，外键连接组织表的主键，为将来分配权限做准备',
+`USERNAME` varchar(30) NOT NULL COMMENT '昵称',
+`PASSWORD` varchar(40) NOT NULL COMMENT '密码',
+`BIRTHDAY` date DEFAULT NULL COMMENT '生日',
+`SEX` int(1) DEFAULT NULL COMMENT '性别：1-男；0-女',
+`LOGGIN` int(1) NOT NULL DEFAULT '1' COMMENT '登录状态：1/0',
+`VERSION_NUMBER` int(11) NOT NULL DEFAULT '1' COMMENT '行版本号，用来处理锁',
+`CREATE_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+`BLOG` varchar (250) DEFAULT '这个用户懒死了，什么个签都没有的喵' COMMENT '个性签名',
+`OCCUPATION` varchar (20) COMMENT '职业',
+`GOT_URL` varchar (80) NOT NULL DEFAULT 'E:\ideaUI\demo\img\user_got\32935-106.jpg' COMMENT '用户头像路径',
+PRIMARY KEY (`USER_ID`),
+UNIQUE KEY `USERNAME` (`USERNAME`)
+)ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='系统用户';
