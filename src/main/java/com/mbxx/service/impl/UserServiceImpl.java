@@ -20,11 +20,11 @@ public class UserServiceImpl implements UserService {
         return userMapper.insert(user);
     }
 
-    @Override
-    public PageInfo<User> findAllUser(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<User> users=userMapper.selectAllUser();
-        PageInfo result=new PageInfo(users);
-        return result;
-    }
+//    @Override
+//    public PageInfo<User> findAllUser(int pageNum, int pageSize) {
+//        PageHelper.startPage(pageNum,pageSize);
+////        List<User> users=userMapper.selectAllUser();
+//        PageInfo result=new PageInfo(users);
+//        return result;
+//    }
 }

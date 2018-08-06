@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbxx.dao.User_CollectionMapper">
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User_Collection">
+    <id column="COLLECTION_ID" jdbcType="BIGINT" property="collectionId" />
+    <result column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="SING_SHEET_ID" jdbcType="BIGINT" property="singSheetId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    COLLECTION_ID, USER_ID, SING_SHEET_ID, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_collection
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_collection
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User_Collection">
+    insert into user_collection (COLLECTION_ID, USER_ID, SING_SHEET_ID, 
+      CREATE_TIME)
+    values (#{collectionId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{singSheetId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User_Collection">
+    insert into user_collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="collectionId != null">
+        COLLECTION_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="singSheetId != null">
+        SING_SHEET_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="collectionId != null">
+        #{collectionId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="singSheetId != null">
+        #{singSheetId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User_Collection">
+    update user_collection
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="singSheetId != null">
+        SING_SHEET_ID = #{singSheetId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User_Collection">
+    update user_collection
+    set USER_ID = #{userId,jdbcType=BIGINT},
+      SING_SHEET_ID = #{singSheetId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User_Collection">
+    <id column="COLLECTION_ID" jdbcType="BIGINT" property="collectionId" />
+    <result column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="SING_SHEET_ID" jdbcType="BIGINT" property="singSheetId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    COLLECTION_ID, USER_ID, SING_SHEET_ID, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_collection
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_collection
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User_Collection">
+    insert into user_collection (COLLECTION_ID, USER_ID, SING_SHEET_ID, 
+      CREATE_TIME)
+    values (#{collectionId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{singSheetId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User_Collection">
+    insert into user_collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="collectionId != null">
+        COLLECTION_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="singSheetId != null">
+        SING_SHEET_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="collectionId != null">
+        #{collectionId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="singSheetId != null">
+        #{singSheetId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User_Collection">
+    update user_collection
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="singSheetId != null">
+        SING_SHEET_ID = #{singSheetId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User_Collection">
+    update user_collection
+    set USER_ID = #{userId,jdbcType=BIGINT},
+      SING_SHEET_ID = #{singSheetId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where COLLECTION_ID = #{collectionId,jdbcType=BIGINT}
+  </update>
+</mapper>

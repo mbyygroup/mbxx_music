@@ -23,13 +23,13 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @ResponseBody
-    @GetMapping("/all")
-    public Object findAllUser(
-            @RequestParam(name = "pageNum",required = false) int pageNum,
-            @RequestParam(name = "pageSize" ,required = false) int pageSize
-    ){
-        return userService.findAllUser(pageNum,pageSize);
-    }
+//    @ResponseBody
+//    @GetMapping("/all")
+//    public Object findAllUser(
+//            @RequestParam(name = "pageNum",required = false) int pageNum,
+//            @RequestParam(name = "pageSize" ,required = false) int pageSize
+//    ){
+//        return userService.findAllUser(pageNum,pageSize);
+//    }
 
 }

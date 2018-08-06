@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mbxx.dao.AlbumMapper" >
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.Album" >
+    <id column="ALBUM_ID" property="albumId" jdbcType="BIGINT" />
+    <result column="ALBUM_NAME" property="albumName" jdbcType="VARCHAR" />
+    <result column="SINGER_ID" property="singerId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ALBUM_ID, ALBUM_NAME, SINGER_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from album
+    where ALBUM_ID = #{albumId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from album
+    where ALBUM_ID = #{albumId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.Album" >
+    insert into album (ALBUM_ID, ALBUM_NAME, SINGER_ID
+      )
+    values (#{albumId,jdbcType=BIGINT}, #{albumName,jdbcType=VARCHAR}, #{singerId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.Album" >
+    insert into album
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        ALBUM_ID,
+      </if>
+      <if test="albumName != null" >
+        ALBUM_NAME,
+      </if>
+      <if test="singerId != null" >
+        SINGER_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        #{albumId,jdbcType=BIGINT},
+      </if>
+      <if test="albumName != null" >
+        #{albumName,jdbcType=VARCHAR},
+      </if>
+      <if test="singerId != null" >
+        #{singerId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.Album" >
+    update album
+    <set >
+      <if test="albumName != null" >
+        ALBUM_NAME = #{albumName,jdbcType=VARCHAR},
+      </if>
+      <if test="singerId != null" >
+        SINGER_ID = #{singerId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ALBUM_ID = #{albumId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.Album" >
+    update album
+    set ALBUM_NAME = #{albumName,jdbcType=VARCHAR},
+      SINGER_ID = #{singerId,jdbcType=BIGINT}
+    where ALBUM_ID = #{albumId,jdbcType=BIGINT}
+  </update>
+</mapper>

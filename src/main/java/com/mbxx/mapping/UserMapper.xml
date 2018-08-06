@@ -36,6 +36,932 @@
     from sys_user
     where USER_ID = #{userId,jdbcType=BIGINT}
   </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User">
+    insert into sys_user (USER_ID, USERNAME, PASSWORD, 
+      NICKNAME, BIRTHDAY, SEX, 
+      ENABLED, VERSION_NUMBER, CREATE_DATE, 
+      CREATE_BY, UPDATE_BY, UPDATE_DATE, 
+      ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
+      ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6, 
+      ATTRIBUTE7, ATTRIBUTE8, ATTRIBUTE9, 
+      ATTRIBUTE10)
+    values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=INTEGER}, 
+      #{enabled,jdbcType=INTEGER}, #{versionNumber,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateBy,jdbcType=BIGINT}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
+      #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}, 
+      #{attribute7,jdbcType=VARCHAR}, #{attribute8,jdbcType=VARCHAR}, #{attribute9,jdbcType=VARCHAR}, 
+      #{attribute10,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="nickname != null">
+        NICKNAME,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="enabled != null">
+        ENABLED,
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6,
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7,
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8,
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9,
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attribute1 != null">
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        NICKNAME = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enabled != null">
+        ENABLED = #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      NICKNAME = #{nickname,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SEX = #{sex,jdbcType=INTEGER},
+      ENABLED = #{enabled,jdbcType=INTEGER},
+      VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      CREATE_BY = #{createBy,jdbcType=BIGINT},
+      UPDATE_BY = #{updateBy,jdbcType=BIGINT},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="TO_ID" jdbcType="BIGINT" property="toId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="LOGGIN" jdbcType="INTEGER" property="loggin" />
+    <result column="VERSION_NUMBER" jdbcType="INTEGER" property="versionNumber" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="BLOG" jdbcType="VARCHAR" property="blog" />
+    <result column="OCCUPATION" jdbcType="VARCHAR" property="occupation" />
+    <result column="GOT_URL" jdbcType="VARCHAR" property="gotUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, TO_ID, USERNAME, PASSWORD, BIRTHDAY, SEX, LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+    BLOG, OCCUPATION, GOT_URL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User">
+    insert into sys_user (USER_ID, TO_ID, USERNAME, 
+      PASSWORD, BIRTHDAY, SEX, 
+      LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+      BLOG, OCCUPATION, GOT_URL
+      )
+    values (#{userId,jdbcType=BIGINT}, #{toId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=INTEGER}, 
+      #{loggin,jdbcType=INTEGER}, #{versionNumber,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{blog,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{gotUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="toId != null">
+        TO_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="loggin != null">
+        LOGGIN,
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="blog != null">
+        BLOG,
+      </if>
+      <if test="occupation != null">
+        OCCUPATION,
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="toId != null">
+        #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    <set>
+      <if test="toId != null">
+        TO_ID = #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        LOGGIN = #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        BLOG = #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL = #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    set TO_ID = #{toId,jdbcType=BIGINT},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SEX = #{sex,jdbcType=INTEGER},
+      LOGGIN = #{loggin,jdbcType=INTEGER},
+      VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      BLOG = #{blog,jdbcType=VARCHAR},
+      OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      GOT_URL = #{gotUrl,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="ENABLED" jdbcType="INTEGER" property="enabled" />
+    <result column="VERSION_NUMBER" jdbcType="INTEGER" property="versionNumber" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="CREATE_BY" jdbcType="BIGINT" property="createBy" />
+    <result column="UPDATE_BY" jdbcType="BIGINT" property="updateBy" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="ATTRIBUTE1" jdbcType="VARCHAR" property="attribute1" />
+    <result column="ATTRIBUTE2" jdbcType="VARCHAR" property="attribute2" />
+    <result column="ATTRIBUTE3" jdbcType="VARCHAR" property="attribute3" />
+    <result column="ATTRIBUTE4" jdbcType="VARCHAR" property="attribute4" />
+    <result column="ATTRIBUTE5" jdbcType="VARCHAR" property="attribute5" />
+    <result column="ATTRIBUTE6" jdbcType="VARCHAR" property="attribute6" />
+    <result column="ATTRIBUTE7" jdbcType="VARCHAR" property="attribute7" />
+    <result column="ATTRIBUTE8" jdbcType="VARCHAR" property="attribute8" />
+    <result column="ATTRIBUTE9" jdbcType="VARCHAR" property="attribute9" />
+    <result column="ATTRIBUTE10" jdbcType="VARCHAR" property="attribute10" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USERNAME, PASSWORD, NICKNAME, BIRTHDAY, SEX, ENABLED, VERSION_NUMBER, CREATE_DATE, 
+    CREATE_BY, UPDATE_BY, UPDATE_DATE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, 
+    ATTRIBUTE5, ATTRIBUTE6, ATTRIBUTE7, ATTRIBUTE8, ATTRIBUTE9, ATTRIBUTE10
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User">
+    insert into sys_user (USER_ID, USERNAME, PASSWORD, 
+      NICKNAME, BIRTHDAY, SEX, 
+      ENABLED, VERSION_NUMBER, CREATE_DATE, 
+      CREATE_BY, UPDATE_BY, UPDATE_DATE, 
+      ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
+      ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6, 
+      ATTRIBUTE7, ATTRIBUTE8, ATTRIBUTE9, 
+      ATTRIBUTE10)
+    values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=INTEGER}, 
+      #{enabled,jdbcType=INTEGER}, #{versionNumber,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateBy,jdbcType=BIGINT}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
+      #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}, 
+      #{attribute7,jdbcType=VARCHAR}, #{attribute8,jdbcType=VARCHAR}, #{attribute9,jdbcType=VARCHAR}, 
+      #{attribute10,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="nickname != null">
+        NICKNAME,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="enabled != null">
+        ENABLED,
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6,
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7,
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8,
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9,
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attribute1 != null">
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        NICKNAME = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="enabled != null">
+        ENABLED = #{enabled,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="attribute1 != null">
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null">
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null">
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null">
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null">
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null">
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute7 != null">
+        ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute8 != null">
+        ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute9 != null">
+        ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute10 != null">
+        ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      NICKNAME = #{nickname,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SEX = #{sex,jdbcType=INTEGER},
+      ENABLED = #{enabled,jdbcType=INTEGER},
+      VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      CREATE_BY = #{createBy,jdbcType=BIGINT},
+      UPDATE_BY = #{updateBy,jdbcType=BIGINT},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      ATTRIBUTE7 = #{attribute7,jdbcType=VARCHAR},
+      ATTRIBUTE8 = #{attribute8,jdbcType=VARCHAR},
+      ATTRIBUTE9 = #{attribute9,jdbcType=VARCHAR},
+      ATTRIBUTE10 = #{attribute10,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="TO_ID" jdbcType="BIGINT" property="toId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="LOGGIN" jdbcType="INTEGER" property="loggin" />
+    <result column="VERSION_NUMBER" jdbcType="INTEGER" property="versionNumber" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="BLOG" jdbcType="VARCHAR" property="blog" />
+    <result column="OCCUPATION" jdbcType="VARCHAR" property="occupation" />
+    <result column="GOT_URL" jdbcType="VARCHAR" property="gotUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, TO_ID, USERNAME, PASSWORD, BIRTHDAY, SEX, LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+    BLOG, OCCUPATION, GOT_URL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User">
+    insert into sys_user (USER_ID, TO_ID, USERNAME, 
+      PASSWORD, BIRTHDAY, SEX, 
+      LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+      BLOG, OCCUPATION, GOT_URL
+      )
+    values (#{userId,jdbcType=BIGINT}, #{toId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=INTEGER}, 
+      #{loggin,jdbcType=INTEGER}, #{versionNumber,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{blog,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{gotUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="toId != null">
+        TO_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="loggin != null">
+        LOGGIN,
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="blog != null">
+        BLOG,
+      </if>
+      <if test="occupation != null">
+        OCCUPATION,
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="toId != null">
+        #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    <set>
+      <if test="toId != null">
+        TO_ID = #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        LOGGIN = #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        BLOG = #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL = #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    set TO_ID = #{toId,jdbcType=BIGINT},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SEX = #{sex,jdbcType=INTEGER},
+      LOGGIN = #{loggin,jdbcType=INTEGER},
+      VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      BLOG = #{blog,jdbcType=VARCHAR},
+      OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      GOT_URL = #{gotUrl,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="ENABLED" jdbcType="INTEGER" property="enabled" />
+    <result column="VERSION_NUMBER" jdbcType="INTEGER" property="versionNumber" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="CREATE_BY" jdbcType="BIGINT" property="createBy" />
+    <result column="UPDATE_BY" jdbcType="BIGINT" property="updateBy" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="ATTRIBUTE1" jdbcType="VARCHAR" property="attribute1" />
+    <result column="ATTRIBUTE2" jdbcType="VARCHAR" property="attribute2" />
+    <result column="ATTRIBUTE3" jdbcType="VARCHAR" property="attribute3" />
+    <result column="ATTRIBUTE4" jdbcType="VARCHAR" property="attribute4" />
+    <result column="ATTRIBUTE5" jdbcType="VARCHAR" property="attribute5" />
+    <result column="ATTRIBUTE6" jdbcType="VARCHAR" property="attribute6" />
+    <result column="ATTRIBUTE7" jdbcType="VARCHAR" property="attribute7" />
+    <result column="ATTRIBUTE8" jdbcType="VARCHAR" property="attribute8" />
+    <result column="ATTRIBUTE9" jdbcType="VARCHAR" property="attribute9" />
+    <result column="ATTRIBUTE10" jdbcType="VARCHAR" property="attribute10" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USERNAME, PASSWORD, NICKNAME, BIRTHDAY, SEX, ENABLED, VERSION_NUMBER, CREATE_DATE, 
+    CREATE_BY, UPDATE_BY, UPDATE_DATE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, 
+    ATTRIBUTE5, ATTRIBUTE6, ATTRIBUTE7, ATTRIBUTE8, ATTRIBUTE9, ATTRIBUTE10
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
   <select id="selectAllUser" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

@@ -2,8 +2,6 @@ package com.mbxx.dao;
 
 import com.mbxx.pojo.User;
 
-import java.util.List;
-
 public interface UserMapper {
     int deleteByPrimaryKey(Long userId);
 
@@ -16,6 +14,4 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
-
-    List<User> selectAllUser();
 }
