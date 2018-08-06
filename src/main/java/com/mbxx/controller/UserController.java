@@ -23,6 +23,13 @@ public class UserController {
         return userService.addUser(user);
     }
 
+
+    @GetMapping("/test")
+    public String test(){
+        logger.info("test启动");
+        return "success";
+    }
+
 //    @ResponseBody
 //    @GetMapping("/all")
 //    public Object findAllUser(
