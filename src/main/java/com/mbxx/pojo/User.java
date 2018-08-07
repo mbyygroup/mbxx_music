@@ -1,19 +1,8 @@
 package com.mbxx.pojo;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mbxx.base.BaseDTO;
-
 import java.util.Date;
 
-/*
-* 用户类
-*
-*
-* */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class User extends BaseDTO {
-    private static final long serialVersionUID = -7395431342743009038L;
-
+public class User {
     private Long userId;
 
     private String username;
@@ -112,6 +101,10 @@ public class User extends BaseDTO {
 
     public void setEnabled(Integer enabled) {
         this.enabled = enabled;
+    }
+
+    public Integer getVersionNumber() {
+        return versionNumber;
     }
 
     public void setVersionNumber(Integer versionNumber) {
