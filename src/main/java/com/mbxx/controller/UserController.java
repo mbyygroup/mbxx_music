@@ -43,22 +43,32 @@ public class UserController {
     static {
         User user1=new User();
         user1.setUserId(1L);
+        user1.setToId(2L);
         user1.setUsername("lufei");
-        user1.setNickname("蒙奇D路飞");
+        user1.setPassword("csgfqge134vsff2q");
         user1.setBirthday(Dates.parseDate("2000-05-05"));
         user1.setSex(Constants.Sex.MALE);
-        user1.setEnabled(Constants.Flag.YES);
+        user1.setLoggin(1);
+        user1.setVersionNumber(1);
+        user1.setCreateDate(Dates.parseDate("2000-05-05"));
+        user1.setBlog("你萌好，愿意永生追随我吗");
+        user1.setGotUrl("E:\\ideaUI\\demo\\img\\user_got\\32935-106.jpg");
         userList.add(user1);
 
-
-        User user2 = new User();
+        User user2=new User();
         user2.setUserId(2L);
-        user2.setUsername("nami");
-        user2.setNickname("娜美");
-        user2.setBirthday(Dates.parseDate("2000/7/3"));
-        user2.setSex(Constants.Sex.FEMALE);
-        user2.setEnabled(Constants.Flag.YES);
+        user2.setToId(1L);
+        user2.setUsername("娜美");
+        user2.setPassword("csgfqge134vsff2q");
+        user2.setBirthday(Dates.parseDate("2000-05-05"));
+        user2.setSex(Constants.Sex.MALE);
+        user2.setLoggin(1);
+        user2.setVersionNumber(1);
+        user2.setCreateDate(Dates.parseDate("2000-05-05"));
+        user2.setBlog("你萌好，愿意永生追随我吗");
+        user2.setGotUrl("E:\\ideaUI\\demo\\img\\user_got\\32935-106.jpg");
         userList.add(user2);
+
     }
 
     @RequestMapping("/queryAll")
