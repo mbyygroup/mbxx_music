@@ -3,6 +3,179 @@
 <mapper namespace="com.mbxx.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
     <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="TO_ID" jdbcType="BIGINT" property="toId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SEX" jdbcType="INTEGER" property="sex" />
+    <result column="LOGGIN" jdbcType="INTEGER" property="loggin" />
+    <result column="VERSION_NUMBER" jdbcType="INTEGER" property="versionNumber" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="BLOG" jdbcType="VARCHAR" property="blog" />
+    <result column="OCCUPATION" jdbcType="VARCHAR" property="occupation" />
+    <result column="GOT_URL" jdbcType="VARCHAR" property="gotUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, TO_ID, USERNAME, PASSWORD, BIRTHDAY, SEX, LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+    BLOG, OCCUPATION, GOT_URL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mbxx.pojo.User">
+    insert into sys_user (USER_ID, TO_ID, USERNAME, 
+      PASSWORD, BIRTHDAY, SEX, 
+      LOGGIN, VERSION_NUMBER, CREATE_DATE, 
+      BLOG, OCCUPATION, GOT_URL
+      )
+    values (#{userId,jdbcType=BIGINT}, #{toId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{sex,jdbcType=INTEGER}, 
+      #{loggin,jdbcType=INTEGER}, #{versionNumber,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{blog,jdbcType=VARCHAR}, #{occupation,jdbcType=VARCHAR}, #{gotUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbxx.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="toId != null">
+        TO_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="loggin != null">
+        LOGGIN,
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="blog != null">
+        BLOG,
+      </if>
+      <if test="occupation != null">
+        OCCUPATION,
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="toId != null">
+        #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    <set>
+      <if test="toId != null">
+        TO_ID = #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="loggin != null">
+        LOGGIN = #{loggin,jdbcType=INTEGER},
+      </if>
+      <if test="versionNumber != null">
+        VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="blog != null">
+        BLOG = #{blog,jdbcType=VARCHAR},
+      </if>
+      <if test="occupation != null">
+        OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="gotUrl != null">
+        GOT_URL = #{gotUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbxx.pojo.User">
+    update sys_user
+    set TO_ID = #{toId,jdbcType=BIGINT},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SEX = #{sex,jdbcType=INTEGER},
+      LOGGIN = #{loggin,jdbcType=INTEGER},
+      VERSION_NUMBER = #{versionNumber,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      BLOG = #{blog,jdbcType=VARCHAR},
+      OCCUPATION = #{occupation,jdbcType=VARCHAR},
+      GOT_URL = #{gotUrl,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mbxx.pojo.User">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
     <result column="USERNAME" jdbcType="VARCHAR" property="username" />
     <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
     <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
