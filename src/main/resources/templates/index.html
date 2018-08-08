@@ -9,273 +9,355 @@
 	<link rel="stylesheet" href="../static/css/myCSS.css">
 </head>
 <body>
-	<header class="clear" id="header">
-		<nav class="navbar navbar-inverse navbar-fixed-top myNav">
-			<div class="container">
-				<div class="navbar-header">
-					<a href="#"><img src="../static/images/log4.png" alt=""></a>
+<header class="clear" id="header">
+	<nav class="navbar navbar-inverse navbar-fixed-top myNav">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#"><img src="./images/log4.png" alt=""></a>
 
-					<button class="navbar-toggle" data-toggle="collapse" data-targe=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse navbar-left" style="margin-top: 20px;margin-left:30px">
-					<ul class="nav navbar-nav">
-						<li>
-							<div class="btn-group">
-								<a href="#" class="myBtn dropdown-toggle" data-toggle="dropdown">
-									发现
-									<span class="caret"></span>
-								</a>
-								<ul id="mydropdown" class="dropdown-menu">
-									<li class="active"><a href="#">推荐</a></li>
-									<li><a href="#">排行榜</a></li>
-									<li><a href="#">歌单</a></li>
-									<li><a href="#">歌手</a></li>
-									<li><a href="#">碟片</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href="#">我的</a></li>
-						<li><a href="#">朋友</a></li>
-						<li><a href="#">音乐人</a></li>
-						<li><a href="#">下载</a></li>
-					</ul>
-				</div>
-				<ul class="nav navbar-nav navbar-right myul" style="margin-top: 10px;">
-					<li><a href="#mymodal" data-toggle="modal">登录</a></li>
-					<li><a href="#">注册</a></li>
+				<button class="navbar-toggle" data-toggle="collapse" data-targe=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-left" style="margin-top: 20px;margin-left:30px">
+				<ul class="nav navbar-nav">
+					<li>
+						<div class="btn-group">
+							<a href="#" class="myBtn dropdown-toggle" data-toggle="dropdown">
+								发现
+								<span class="caret"></span>
+							</a>
+							<ul id="mydropdown" class="dropdown-menu">
+								<li class="active"><a href="#">推荐</a></li>
+								<li><a href="#">排行榜</a></li>
+								<li><a href="#">歌单</a></li>
+								<li><a href="#">歌手</a></li>
+								<li><a href="#">碟片</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">我的</a></li>
+					<li><a href="#">朋友</a></li>
+					<li><a href="#">音乐人</a></li>
+					<li><a href="#">下载</a></li>
 				</ul>
-
-				<form class="navbar-form navbar-right myform" style="margin-top: 20px;">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="请输入要搜索的内容">
-						<span class="btn btn-info input-group-addon">
-							搜索
-						</span>
-					</div>
-				</form>
 			</div>
-		</nav>
-	</header>
-
-	<div class="container" id="content1">
-		<div class="row">
-			<div class="col-xs-12 col-md-9">
-				<div class="carousel slide" id="myCarousel" data-ride="carousel">
-
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-					</ol>
-
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="http://p1.music.126.net/JWZQzNAemHv_Ri7VO0Izng==/109951163445972341.jpg" alt="">
-						</div>
-						<div class="item">
-							<img src="http://p1.music.126.net/fusWjtcuyBcyLPHBoYaHIQ==/109951163445751844.jpg" alt="">
-						</div>
-						<div class="item">
-							<img src="http://p1.music.126.net/JWZQzNAemHv_Ri7VO0Izng==/109951163445972341.jpg" alt="">
-						</div>
-						<div class="item">
-							<img src="http://p1.music.126.net/b9YZfzXNgmO4-Rl0TbRpbg==/109951163445971923.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-3">
-				<div class="newsList">
-					<a href="#" id="side-download" class="btn">下载客户端</a>
-					<p>PC <br> 安卓 <br> iPhone <br> WP <br> iPad <br> Mac <br> 六大客户端</p>
-					<span class="shadow"></span>
-					<span class="shadow"></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container" id="content2">
-		<div class="col-xs-12 col-md-9">
-			<li class="right"><a href="#">更多</a></li>
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#name3" data-toggle="tab">热门推荐</a></li>
-				<li><a href="#" data-toggle="tab">华语</a></li>
-				<li><a href="#" data-toggle="tab">流行</a></li>
-				<li><a href="#" data-toggle="tab">摇滚</a></li>
-				<li><a href="#" data-toggle="tab">民谣</a></li>
-				<li><a href="#" data-toggle="tab">电子</a></li>
+			<ul class="nav navbar-nav navbar-right myul" style="margin-top: 10px;">
+				<li><a href="#mymodal" data-toggle="modal">登录</a></li>
+				<li><a href="#">注册</a></li>
 			</ul>
 
-			
+			<form class="navbar-form navbar-right myform" style="margin-top: 20px;">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="请输入要搜索的内容">
+					<span class="btn btn-info input-group-addon">
+							搜索
+						</span>
+				</div>
+			</form>
+		</div>
+	</nav>
+</header>
 
-			<div class="tab-content myTabContent">
-				<div class="tab-pane fade in active" id="name3">
-					<div class="row">
-						<div class="col-sm-6 col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/MgIvbf-v-LSnm6qDXo1pgA==/109951163445614444.jpg?param=140y140" alt="">
-								
-									<div class="caption">
-										<p>立秋 | 我的心脏由今天开始温柔起来</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/Fva7ariHUBGoWpmrDBRT9g==/19177681812283126.jpg?param=140y140" alt="">
+<div class="container" id="content1">
+	<div class="row">
+		<div class="col-xs-12 col-md-9">
+			<div class="carousel slide" id="myCarousel" data-ride="carousel">
 
-									<div class="caption">
-										<p>论如何优雅的让你知道我想你</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/FDYPdLxtWTtPEZWR4KZO5g==/109951163305706170.jpg?param=140y140" alt="">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
 
-									<div class="caption">
-										<p>Acoustic｜坠入不插电版的电音人声</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/QGbr2m8e157hrP8kILmyOA==/109951163433154783.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>" 愿你努力之事皆有所成 "</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/kapXZ5di8V76okOXsHH2TA==/109951163440081929.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>华语 | 每个人都是一颗独立星球</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/v3FDIQJaS1RuQ-7hEQVwLQ==/109951163442760850.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>你不用喜欢异地恋，喜欢我就好了</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/FEqWDhatvfm-50OPudgebQ==/109951163416746096.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>姑娘，你唱的歌真好听</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/YVgW0O5SijOq0m8C90PavQ==/18894007812317570.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>“我爱你”的100种表达方式</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/52xvBW-gpc7hyWloOMUkHQ==/19185378393676360.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>民谣丨在你笑里睡一夏天</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/DRnshlkBogcHKJ-C5SOdAg==/109951163407598142.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>那六月的潮声，原是你眼中的一抹虹</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/qknJa02ZPC09yZhp7NgxbQ==/18658712325236216.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>到頭來，民谣輸給了愛情.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-xs-6 col-md-3 col-sm-6">
-							<div class="thumbnail">
-								<a href="#">
-									<img src="http://p1.music.126.net/EpI_hkgYrrpePyueFTpoog==/18494885093033438.jpg?param=140y140" alt="">
-
-									<div class="caption">
-										<p>国风民谣 |满堂花醉三千客，一剑霜寒十四州</p>
-									</div>
-								</a>
-							</div>
-						</div>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="http://p1.music.126.net/JWZQzNAemHv_Ri7VO0Izng==/109951163445972341.jpg" alt="">
+					</div>
+					<div class="item">
+						<img src="http://p1.music.126.net/fusWjtcuyBcyLPHBoYaHIQ==/109951163445751844.jpg" alt="">
+					</div>
+					<div class="item">
+						<img src="http://p1.music.126.net/JWZQzNAemHv_Ri7VO0Izng==/109951163445972341.jpg" alt="">
+					</div>
+					<div class="item">
+						<img src="http://p1.music.126.net/b9YZfzXNgmO4-Rl0TbRpbg==/109951163445971923.jpg" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-12 col-md-3">
-			<h2 class="myh2">
-				<span class="f-f1">入驻歌手</span>
-				<small><a href="#" style="color: #fff">查看全部</a></small>
-			</h2>
+			<div class="newsList">
+				<a href="#" id="side-download" class="btn">下载客户端</a>
+				<p>PC <br> 安卓 <br> iPhone <br> WP <br> iPad <br> Mac <br> 六大客户端</p>
+				<span class="shadow"></span>
+				<span class="shadow"></span>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="container" id="content2">
+	<div class="col-xs-12 col-md-9">
+		<li class="right"><a href="#">更多</a></li>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#name3" data-toggle="tab">热门推荐</a></li>
+			<li><a href="#" data-toggle="tab">华语</a></li>
+			<li><a href="#" data-toggle="tab">流行</a></li>
+			<li><a href="#" data-toggle="tab">摇滚</a></li>
+			<li><a href="#" data-toggle="tab">民谣</a></li>
+			<li><a href="#" data-toggle="tab">电子</a></li>
+		</ul>
+
+
+
+		<div class="tab-content myTabContent">
+			<div class="tab-pane fade in active" id="name3">
+				<div class="row">
+					<div class="col-sm-6 col-md-3 col-xs-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/MgIvbf-v-LSnm6qDXo1pgA==/109951163445614444.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>立秋 | 我的心脏由今天开始温柔起来</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3 col-xs-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/Fva7ariHUBGoWpmrDBRT9g==/19177681812283126.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>论如何优雅的让你知道我想你</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3 col-xs-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/FDYPdLxtWTtPEZWR4KZO5g==/109951163305706170.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>Acoustic｜坠入不插电版的电音人声</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/QGbr2m8e157hrP8kILmyOA==/109951163433154783.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>" 愿你努力之事皆有所成 "</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/kapXZ5di8V76okOXsHH2TA==/109951163440081929.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>华语 | 每个人都是一颗独立星球</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/v3FDIQJaS1RuQ-7hEQVwLQ==/109951163442760850.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>你不用喜欢异地恋，喜欢我就好了</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/FEqWDhatvfm-50OPudgebQ==/109951163416746096.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>姑娘，你唱的歌真好听</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/YVgW0O5SijOq0m8C90PavQ==/18894007812317570.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>“我爱你”的100种表达方式</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/52xvBW-gpc7hyWloOMUkHQ==/19185378393676360.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>民谣丨在你笑里睡一夏天</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/DRnshlkBogcHKJ-C5SOdAg==/109951163407598142.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>那六月的潮声，原是你眼中的一抹虹</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/qknJa02ZPC09yZhp7NgxbQ==/18658712325236216.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>到頭來，民谣輸給了愛情.</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 col-sm-6">
+						<div class="thumbnail">
+							<a href="#">
+								<img src="http://p1.music.126.net/EpI_hkgYrrpePyueFTpoog==/18494885093033438.jpg?param=140y140" alt="">
+
+								<div class="caption">
+									<p>国风民谣 |满堂花醉三千客，一剑霜寒十四州</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-md-3">
+		<h2 class="myh2">
+			<span class="f-f1">入驻歌手</span>
+			<small><a href="#" style="color: #fff">查看全部</a></small>
+		</h2>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img class="media-object" src="http://p1.music.126.net/p9U80ex1B1ciPFa125xV5A==/5931865232210340.jpg?param=62y62" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>张惠妹aMEI</p>
+					<p>台湾歌手张惠妹</p>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img src="http://p1.music.126.net/1EN_iqQWU_E3DafzEOh3cA==/3302932937408956.jpg?param=62y62" class="media-object" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>Fine乐团</p>
+					<p>独立音乐人</p>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img src="http://p1.music.126.net/ZuktZvjcxpYBjcWC3gmbPg==/19027048718765608.jpg?param=62y62" class="media-object" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>萬曉利</p>
+					<p>民谣歌手、中国现代民谣的代表人物之一</p>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img src="http://p1.music.126.net/v_zYgE9kmAwVGWV2c8hFxA==/7943971513291094.jpg?param=62y62" class="media-object" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>音乐人赵雷</p>
+					<p>民谣歌手</p>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img src="http://p1.music.126.net/U-duMw2-FE0wNRsuwGktPw==/109951162895674268.jpg?param=62y62" class="media-object" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>王三溥</p>
+					<p>音乐人</p>
+				</a>
+			</div>
+		</div>
+		<hr>
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img src="http://p4.music.126.net/ULlwJ2drOfYv-f6-_7jGGQ==/3250156379592966.jpg?param=62y62" class="media-object" alt="">
+				</a>
+			</div>
+			<div class="media-body">
+				<a href="#">
+					<p>薛之谦</p>
+					<p>流行原创歌手薛之谦</p>
+				</a>
+			</div>
 		</div>
 	</div>
 
 	<div class="container" id="content3">
-		
+
 	</div>
 
 	<div class="container" id="content4">
-		
+
 	</div>
 
 	<div class="container" id="content5">
-		
+
 	</div>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery-1.10.2."></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery-1.10.2."></script>
 </body>
 </html>
