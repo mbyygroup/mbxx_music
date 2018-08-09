@@ -1,12 +1,10 @@
 package com.mbxx.service;
 
-import com.github.pagehelper.PageInfo;
+import com.mbxx.base.Service;
 import com.mbxx.pojo.User;
 
 
-public interface UserService {
+public interface UserService extends Service<User>
+{
 
-    int addUser(User user);
-
-//    PageInfo<User> findAllUser(int pageNum, int pageSize);
 }

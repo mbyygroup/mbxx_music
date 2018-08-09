@@ -1,17 +1,7 @@
 package com.mbxx.dao;
 
+import com.mbxx.base.Mapper;
 import com.mbxx.pojo.User;
 
-public interface UserMapper {
-    int deleteByPrimaryKey(Long userId);
-
-    int insert(User record);
-
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(Long userId);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+public interface UserMapper extends Mapper<User> {
 }

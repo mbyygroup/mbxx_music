@@ -1,8 +1,22 @@
 package com.mbxx.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.mbxx.base.BaseDTO;
+import com.mbxx.util.Dates;
+
+import javax.persistence.*;
 import java.util.Date;
 
-public class User {
+//系统用户
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name = "SYS_USER")
+public class User{
+    private static final long serialVersionUID = -7395431342736009038L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @OrderBy("DESC")
     private Long userId;
 
     private Long toId;
@@ -11,6 +25,7 @@ public class User {
 
     private String password;
 
+    @JsonFormat(pattern = Dates.Pattern.DATE)
     private Date birthday;
 
     private Integer sex;
@@ -19,6 +34,7 @@ public class User {
 
     private Integer versionNumber;
 
+    @JsonFormat(pattern = Dates.Pattern.DATE)
     private Date createDate;
 
     private String blog;
