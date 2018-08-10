@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1/mbxx_music?serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1/mbxx_music?serverTimezone=GMT%2B8&useSSL=false
     username: root
     password: mbyy0506
     # 使用druid数据源

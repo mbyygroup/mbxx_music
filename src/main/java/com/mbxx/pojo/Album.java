@@ -1,6 +1,19 @@
 package com.mbxx.pojo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import javax.persistence.*;
+
+//专辑列表
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name = "ALBUM")
 public class Album {
+
+    private static final long serialVersionUID = -7395431342736009038L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @OrderBy("DESC")
     private Long albumId;
 
     private String albumName;

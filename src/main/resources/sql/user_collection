@@ -4,5 +4,13 @@ CREATE TABLE `USER_COLLECTION` (
 `SING_SHEET_ID` bigint(20) NOT NULL COMMENT '歌单ID',
 `CREATE_TIME` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间',
 PRIMARY KEY (`COLLECTION_ID`),
-UNIQUE KEY `USER_ID` (`USER_ID`)
+UNIQUE KEY `COLLECTION_ID` (`COLLECTION_ID`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='收藏列表';
+
+
+
+insert into user_collection values (default,1,1,now());
+//删除唯一索引
+drop index user_id on user_collection;
+
+
